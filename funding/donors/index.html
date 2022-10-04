@@ -1,0 +1,230 @@
+<html>
+<head>
+<title>Public Goods &#128152;</title>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=0.75">
+
+<link rel="shortcut icon" type="image/png" href="/img/Favicon.png">
+
+<!-- ------------DATATABLE STUFF STARTS----------- --!>
+  
+  	<link rel="stylesheet" type="text/css" href="https://publicgoods.love/projects/datatables.css">
+
+  	<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.6.1.js"></script>
+
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+  
+	<script type="text/javascript" class="init">
+	
+		$(document).ready(function () {
+    		
+         var numberRenderer = $.fn.dataTable.render.number( ',', '.', 0, '$'  ).display;
+      
+           $('#projectsdatatable').DataTable({
+        		order: [[2, 'desc']],
+                dom: '<"top"fi>rt<"bottom"lp><"clear">',
+                paging: false,
+                columnDefs: [{ orderable: false, targets: [0, 3, 5] }],
+                
+                "footerCallback": function ( row, data, start, end, display ) {
+            var api = this.api(), data;
+ 
+            // Remove the formatting to get integer data for summation
+            var intVal = function ( i ) {
+                return typeof i === 'string' ?
+                    i.replace(/[\$,]/g, '')*1 :
+                    typeof i === 'number' ?
+                        i : 0;
+            };
+ 
+            // Total over all pages
+            total = api
+                .column( 2 )
+                .data()
+                .reduce( function (a, b) {
+                    return intVal(a) + intVal(b);
+                }, 0 );
+ 
+            // Total over this page
+            pageTotal = api
+                .column( 2, { page: 'current'} )
+                .data()
+                .reduce( function (a, b) {
+                    return intVal(a) + intVal(b);
+                }, 0 );
+ 
+            // Update footer
+            $( api.column( 2 ).footer() ).html(
+                ''+numberRenderer( pageTotal ) +' ('+ numberRenderer( total ) +' total)');}
+       			
+   				});
+			});
+</script>
+
+<!-- ------------DATATABLE STUFF ENDS----------- --!>
+
+
+ <style type="text/css">body {
+        background-color: #393939;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      
+      button {
+        display: inline-block;
+        background-color: #393939;
+        border: none;
+        color: #ffffff;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        width: 150px;
+        height: 50px;
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        -o-transition: all 0.2s;
+        transition: all 0.2s;
+        cursor: pointer;
+        margin: 0px;
+      }
+      
+      button:hover {
+        background: linear-gradient(to bottom, #393939 0%, #469c63 100%);
+        font-weight: bold
+      }
+      
+      table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 90%;
+            width: 800px;
+            text-align: left;
+            color:#ffffff;
+        }
+          
+        th {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            border-bottom: 1px dotted #ffffff;
+            text-align: center;
+            padding: 8px;
+            color:#ffffff;
+        }
+
+
+        td {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            border-bottom: 1px dotted #ffffff;
+            text-align: left;
+            padding: 8px;
+            color:#ffffff;
+        }
+          
+ </style>
+
+</head>
+
+<!-- ------------BODY STARTS----------- --!>
+
+<body>
+   
+<br>
+<center>
+
+<p style="font-weight: bold; font-size: 30px; font-family: Arial, Helvetica, sans-serif; color:#ffffff;">Blockchain + Public Goods = <img alt="" src="/img/Love.png" style="width: 75px;" /></p>
+
+<p style="font-family: Arial, Helvetica, sans-serif; color:#ffffff; font-size: 20px;">Discover how blockchain is empowering public goods projects</p>
+
+<div style="border-bottom: 3px solid white; max-width: 800px;">
+  <a href="http://www.publicgoods.love/info/"><button type="button">INFO</button></a>
+  <a href="http://www.publicgoods.love/projects/"><button type="button">PROJECTS</button></a>
+  <a href="http://www.publicgoods.love/funding/platforms/"><button type="button" style="background: linear-gradient(to bottom, #393939 0%, #469c63 100%); font-weight: bold;">FUNDING</button></a>
+</div>
+
+<br>
+    
+  <a href="http://www.publicgoods.love/funding/platforms"><button type="button" style="border: 1px solid #ffffff; border-top-left-radius: 5px; border-bottom-left-radius: 5px; height:60px; font-size: 15px;">Funding<br>Platforms</button></a><a href="http://www.publicgoods.love/funding/donors"><button type="button" style="border: 1px solid #ffffff; border-top-right-radius: 5px; border-bottom-right-radius: 5px; height:60px; font-size: 15px; background: linear-gradient(to bottom, #393939 0%, #469c63 100%); font-weight: bold">Donors & Commitments</button></a>
+
+<!-- ------------DATATABLE STARTS----------- --!>
+
+<div style="border-bottom: 3px solid white; overflow-x:auto; max-width: 800px; color: #ffffff; font-family: Arial, Helvetica, sans-serif;">        
+  
+<br>
+    
+<table id="projectsdatatable" class="display" style="width: 90%; width: 800px; color: #ffffff">
+  
+    <thead>
+  <tr>
+   <th style="width:25px"></th>
+   <th style="width:25px">Name</th>
+   <th style="width:25px">Amount Donated</th>
+   <th>Funding Committment</th>
+   <th style="width:180px">Description</th>
+   <th style="width:25px">Donation Type</th>
+   <th style="width:25px"></th>
+  </tr>
+    </thead>
+
+    <tbody>
+  
+  <tr>
+   <td>
+     <img alt="" width="30" src="/img/Optimism.png" />
+   </td>
+   <td>
+     Optimism
+   </td>
+    <td>
+     $1,000,000
+   </td>
+    <td>
+     Optimism <a href="https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c" target="_blank" style="color: ffffff">commits</a> to "giving all profits made from sequencing (prior to decentralizing the sequencer) to public goods funding experiments".
+   </td>
+   <td>
+     In <a href="https://medium.com/@JonasSFT/learnings-from-optimisms-retropgf-experiment-1-and-proposals-for-experiment-2-165422cedebf" target="_blank" style="color: ffffff">January 2022</a> Optimism ran its first experiment on Retroactive Public Goods Funding, distributing $1 million of rewards among the Optimistic Ethereum ecosystem. 
+   </td>
+   <td>
+     <span style="background-color: #FF6699; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Retroactive Public Goods Funding</span>
+   </td>
+   <td>
+       <a href="https://www.optimism.io/" target="_blank" style="color: ffffff"><img alt="" height="25" src="/img/Hyperlink.png" width="25" /></a>
+   </td>
+  </tr>
+
+
+
+    </tbody>
+
+        <tfoot>
+            <tr>
+                <th colspan="2" style="font-size: 15px; text-align:right; white-space: nowrap; border: none;">Total:</th>
+                <th colspan="4" style="font-size: 15px; border: none;"></th>
+            </tr>
+        </tfoot>
+
+</table>
+
+<br>
+<br> 
+
+</div>
+
+<!-- ------------DATATABLE ENDS----------- --!>
+
+<br>
+
+<p style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; color:#eeeeee;"><a href="mailto:heyo@publicgoods.love" target="_blank" style="color: ffffff">
+Email us</a> to add your public goods project, funding platform, donation or commitment
+<br>
+<br>
+Contribute to this website on <a href="https://github.com/cheeky-gorilla/publicgoods.love/" target="_blank" style="color: ffffff">GitHub</a>
+<br>
+<br>
+&#169; 2022 <a href="https://www.reddit.com/user/cheeky-gorilla" target="_blank" style="color: ffffff">u/cheeky-gorilla</a>
+</p>
+
+</center>
+</body>
+</html>

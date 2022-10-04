@@ -1,0 +1,200 @@
+<html>
+<head>
+<title>Public Goods &#128152;</title>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=0.75">
+
+<link rel="shortcut icon" type="image/png" href="/img/Favicon.png">
+
+<!-- ------------DATATABLE STUFF STARTS----------- --!>
+  
+  	<link rel="stylesheet" type="text/css" href="https://publicgoods.love/projects/datatables.css">
+
+  	<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.6.1.js"></script>
+
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+  
+	<script type="text/javascript" class="init">
+	
+		$(document).ready(function () {
+    		$('#projectsdatatable').DataTable({
+        		order: [[1, 'asc']],
+                dom: '<"top"fi>rt<"bottom"lp><"clear">',
+                paging: false,
+       			columnDefs: [{ orderable: false, targets: [0, 3, 5] }],
+   				});
+			});
+</script>
+
+<!-- ------------DATATABLE STUFF ENDS----------- --!>
+
+
+ <style type="text/css">body {
+        background-color: #393939;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      
+      button {
+        display: inline-block;
+        background-color: #393939;
+        border: none;
+        color: #ffffff;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        width: 150px;
+        height: 50px;
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        -o-transition: all 0.2s;
+        transition: all 0.2s;
+        cursor: pointer;
+        margin: 0px;
+      }
+      
+      button:hover {
+        background: linear-gradient(to bottom, #393939 0%, #469c63 100%);
+        font-weight: bold
+      }
+      
+      table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 90%;
+            width: 800px;
+            text-align: left;
+            color:#ffffff;
+        }
+          
+        th {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            border-bottom: 1px dotted #ffffff;
+            text-align: center;
+            padding: 8px;
+            color:#ffffff;
+        }
+
+
+        td {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            border-bottom: 1px dotted #ffffff;
+            text-align: left;
+            padding: 8px;
+            color:#ffffff;
+        }
+          
+ </style>
+
+</head>
+
+<!-- ------------BODY STARTS----------- --!>
+
+<body>
+   
+<br>
+<center>
+<p style="font-weight: bold; font-size: 30px; font-family: Arial, Helvetica, sans-serif; color:#ffffff;">Blockchain + Public Goods = <img alt="" src="/img/Love.png" style="width: 75px;" /></p>
+
+<p style="font-family: Arial, Helvetica, sans-serif; color:#ffffff; font-size: 20px;">Discover how blockchain is empowering public goods projects</p>
+
+<div style="border-bottom: 3px solid white; max-width: 800px;">
+  <a href="http://www.publicgoods.love/info/"><button type="button">INFO</button></a>
+  <a href="http://www.publicgoods.love/projects/"><button type="button" style="background: linear-gradient(to bottom, #393939 0%, #469c63 100%); font-weight: bold;">PROJECTS</button></a>
+  <a href="http://www.publicgoods.love/funding/platforms/"><button type="button">FUNDING</button></a>
+</div>
+
+<br>
+
+<!-- ------------DATATABLE STARTS----------- --!>
+
+<br>
+
+<div style="border-bottom: 3px solid white; overflow-x:auto; max-width: 800px; color: #ffffff; font-family: Arial, Helvetica, sans-serif;">          
+          
+<table id="projectsdatatable" class="display" style="width: 90%; width: 800px; color: #ffffff">
+  
+    <thead>
+  <tr>
+   <th style="width:25px"></th>
+   <th>Name</th>
+   <th>Public Good</th>
+   <th style="width:280px">Description</th>
+   <th>Blockchain Tooling</th>
+   <th style="width:25px"></th>
+  </tr>
+    </thead>
+
+    <tbody>
+  
+  <tr>
+   <td>
+     <img alt="" width="30" src="/img/Proof of Humanity.png" />
+   </td>
+   <td>
+     Proof of Humanity
+   </td>
+   <td>
+     Digital Infrastructure
+   </td>
+   <td>
+     A system combining webs of trust, with reverse Turing tests, and dispute resolution to create a sybil-proof list of humans.
+   </td>
+   <td>
+     <span style="background-color: #CC99FF; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Smart Contracts</span>
+     <span style="background-color: #99CCFF; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Data Storage</span>
+     <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Quadratic Funding</span>
+   </td>
+   <td>
+       <a href="https://www.proofofhumanity.id/" target="_blank" style="color: ffffff"><img alt="" height="25" src="/img/Hyperlink.png" width="25" /></a><br><br><a href="https://twitter.com/proofofhumanity" target="_blank" style="color: ffffff"><img alt="" height="25" src="/img/Twitter.png" width="25" /></a>
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+     <img alt="" width="30" src="/img/Gitcoin Passport.png" />
+   </td>
+   <td>
+     Gitcoin Passport
+   </td>
+   <td>
+     Digital Infrastructure
+   </td>
+   <td>
+      Grow a decentralized identity record with various credentials about you. Through the network of sources about your personhood, applications like Gitcoin Grants 2.0 gives you rights like matching weight in Quadratic Funding.
+   </td>
+   <td>
+     <span style="background-color: #CC99FF; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Smart Contracts</span>
+     <span style="background-color: #99CCFF; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Data Storage</span>
+   </td>
+   <td>
+       <a href="https://go.gitcoin.co/gitcoin-passport-0" target="_blank" style="color: ffffff"><img alt="" height="25" src="/img/Hyperlink.png" width="25" /></a><br><br><a href="https://twitter.com/gitcoin" target="_blank" style="color: ffffff"><img alt="" height="25" src="/img/Twitter.png" width="25" /></a>
+    </td>
+  </tr>
+    </tbody>
+</table>
+
+<br>
+<br> 
+
+</div>
+
+<!-- ------------DATATABLE ENDS----------- --!>
+
+<br>
+<p style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; color:#eeeeee;"><a href="mailto:heyo@publicgoods.love" target="_blank" style="color: ffffff">
+Email us</a> to add your public goods project, funding platform, donation or commitment
+<br>
+<br>
+Contribute to this website on <a href="https://github.com/cheeky-gorilla/publicgoods.love/" target="_blank" style="color: ffffff">GitHub</a>
+<br>
+<br>
+&#169; 2022 <a href="https://www.reddit.com/user/cheeky-gorilla" target="_blank" style="color: ffffff">u/cheeky-gorilla</a>
+</p>
+
+</center>
+</body>
+</html>
