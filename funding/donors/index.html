@@ -1,20 +1,23 @@
 <html>
+
 <head>
-<title>Public Goods &#128152;</title>
+    <title>Public Goods &#128152;</title>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=0.75">
+    <meta name="viewport" content="width=device-width, initial-scale=0.75">
 
-<link rel="shortcut icon" type="image/png" href="/img/Favicon.png">
+    <link rel="shortcut icon" type="image/png" href="/img/Favicon.png">
 
-<!-- ------------DATATABLE STUFF STARTS----------- --!>
+    <!-- ------------DATATABLE STUFF STARTS----------- --!>
   
   	<link rel="stylesheet" type="text/css" href="https://publicgoods.love/projects/datatables.css">
 
   	<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.6.1.js"></script>
 
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/fixedcolumns/4.1.0/js/dataTables.fixedColumns.min.js"></script>
   
 	<script type="text/javascript" class="init">
 	
@@ -26,7 +29,15 @@
         		order: [[2, 'desc']],
                 dom: '<"top"fi>rt<"bottom"lp><"clear">',
                 paging: false,
-                columnDefs: [{ orderable: false, targets: [0, 3, 5] }],
+                columnDefs: [{ orderable: false, targets: [0, 3, 4, 6] }],
+
+                "oLanguage": {"sSearch": "Search: "},
+                language: {searchPlaceholder: ""},
+             
+                scrollY:        '60vh',
+                scrollX:        true,
+                scrollCollapse: true,
+                fixedColumns:   {left: 1},
                 
                 "footerCallback": function ( row, data, start, end, display ) {
             var api = this.api(), data;
@@ -67,7 +78,7 @@
 
 
  <style type="text/css">body {
-        background-color: #393939;
+        background-color: #000000;
         font-family: Arial, Helvetica, sans-serif;
       }
       
@@ -87,7 +98,9 @@
         transition: all 0.2s;
         cursor: pointer;
         margin: 0px;
-      }
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }z
       
       button:hover {
         background: linear-gradient(to bottom, #393939 0%, #469c63 100%);
@@ -120,6 +133,7 @@
             text-align: left;
             padding: 8px;
             color:#ffffff;
+            background-color: #000000;
         }
           
  </style>
@@ -130,14 +144,16 @@
 
 <body>
    
-<br>
 <center>
 
 <p style="font-weight: bold; font-size: 30px; font-family: Arial, Helvetica, sans-serif; color:#ffffff;">Blockchain + Public Goods = <img alt="" src="/img/Love.png" style="width: 75px;" /></p>
 
 <p style="font-family: Arial, Helvetica, sans-serif; color:#ffffff; font-size: 20px;">Discover how blockchain is empowering public goods projects</p>
 
-<div style="border-bottom: 3px solid white; max-width: 800px;">
+
+<br>
+
+<div style="border-bottom: 3px solid white; max-width: 1000px;">
   <a href="http://www.publicgoods.love/info/"><button type="button">INFO</button></a>
   <a href="http://www.publicgoods.love/projects/"><button type="button">PROJECTS</button></a>
   <a href="http://www.publicgoods.love/funding/platforms/"><button type="button" style="background: linear-gradient(to bottom, #393939 0%, #469c63 100%); font-weight: bold;">FUNDING</button></a>
@@ -145,24 +161,24 @@
 
 <br>
     
-  <a href="http://www.publicgoods.love/funding/platforms"><button type="button" style="border: 1px solid #ffffff; border-top-left-radius: 5px; border-bottom-left-radius: 5px; height:60px; font-size: 15px;">Funding<br>Platforms</button></a><a href="http://www.publicgoods.love/funding/donors"><button type="button" style="border: 1px solid #ffffff; border-top-right-radius: 5px; border-bottom-right-radius: 5px; height:60px; font-size: 15px; background: linear-gradient(to bottom, #393939 0%, #469c63 100%); font-weight: bold">Donors & Commitments</button></a>
+  <a href="http://www.publicgoods.love/funding/platforms"><button type="button" style="border: 1px solid #ffffff; border-top-left-radius: 5px; border-top-right-radius: 0px; border-bottom-left-radius: 5px; border-bottom-right-radius: 0px; height:60px; font-size: 15px;">Funding<br>Platforms</button></a><a href="http://www.publicgoods.love/funding/donors"><button type="button" style="border: 1px solid #ffffff; border-top-left-radius: 0px; border-top-right-radius: 5px; border-bottom-left-radius: 0px; border-bottom-right-radius: 5px; height:60px; font-size: 15px; background: linear-gradient(to bottom, #393939 0%, #469c63 100%); font-weight: bold">Donors & Commitments</button></a>
 
 <!-- ------------DATATABLE STARTS----------- --!>
 
-<div style="border-bottom: 3px solid white; overflow-x:auto; max-width: 800px; color: #ffffff; font-family: Arial, Helvetica, sans-serif;">        
+<div style="max-width: 1000px;">   
   
 <br>
-    
-<table id="projectsdatatable" class="display" style="width: 90%; width: 800px; color: #ffffff">
+          
+<table id="projectsdatatable" class="display" style="width: 1000px; color: #ffffff">
   
-    <thead>
+ <thead>
   <tr>
    <th style="width:25px"></th>
    <th style="width:25px">Name</th>
    <th style="width:25px">Amount Donated</th>
-   <th>Funding Committment</th>
-   <th style="width:180px">Description</th>
-   <th style="width:25px">Donation Type</th>
+   <th style="width:250px">Funding Committment</th>
+   <th style="width:250px">Description</th>
+   <th style="width:120px">Donation Type</th>
    <th style="width:25px"></th>
   </tr>
     </thead>
@@ -180,10 +196,10 @@
      $1,000,000
    </td>
     <td>
-     Optimism <a href="https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c" target="_blank" style="color: ffffff">commits</a> to "giving all profits made from sequencing (prior to decentralizing the sequencer) to public goods funding experiments".
+     In July 2021 Optimism <a href="https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c" target="_blank" style="color: ffffff">committed</a> to "giving all profits to public goods funding". In <a href="https://medium.com/@JonasSFT/learnings-from-optimisms-retropgf-experiment-1-and-proposals-for-experiment-2-165422cedebf" target="_blank" style="color: ffffff">Jan 2022</a> they distributed $1 million in retroactive public goods funding rewards to the Optimistic Ethereum ecosystem.
    </td>
    <td>
-     In <a href="https://medium.com/@JonasSFT/learnings-from-optimisms-retropgf-experiment-1-and-proposals-for-experiment-2-165422cedebf" target="_blank" style="color: ffffff">January 2022</a> Optimism ran its first experiment on Retroactive Public Goods Funding, distributing $1 million of rewards among the Optimistic Ethereum ecosystem. 
+     Optimism helps Ethereum users save on gas fees by rolling up batches of transactions, using a technology known as optimistic rollups. 
    </td>
    <td>
      <span style="background-color: #FF6699; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Retroactive Public Goods Funding</span>
@@ -193,7 +209,199 @@
    </td>
   </tr>
 
+  <tr>
+   <td>
+     <img alt="" width="30" src="/img/Polygon.png" />
+   </td>
+   <td>
+     Polygon
+   </td>
+    <td>
+     $1,000,000
+   </td>
+    <td>
+     In Nov 2021 Polygon <a href="https://blog.polygon.technology/polygon-donates-1-million-to-gitcoin-adds-checkout-option-for-grants/" target="_blank" style="color: ffffff">committed</a> $1m to five quarterly Gitcoin Grants rounds from Dec 2021 through Dec 2022.
+   </td>
+   <td>
+     Polygon is a Ethereum scaling platform that enables developers to build scalable user-friendly dApps with low transaction fees without sacrificing security.
+   </td>
+   <td>
+     <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Gitcoin Grants Quadratic Funding Matching Pool</span><br>
+   </td>
+   <td>
+       <a href="https://polygon.technology/" target="_blank" style="color: ffffff"><img alt="" height="25" src="/img/Hyperlink.png" width="25" /></a>
+   </td>
+  </tr>
 
+
+  <tr>
+   <td>
+     <img alt="" width="30" src="/img/Badger.png" />
+   </td>
+   <td>
+     Badger DAO
+   </td>
+    <td>
+     $1,883,910
+   </td>
+    <td>
+     In Oct 2020 Badger DAO <a href="https://badgerdao.medium.com/gitcoin-badger-accelerating-bitcoin-and-ethereum-public-goods-f0b1fdea06d3" target="_blank" style="color: ffffff">committed</a> 2% of its token supply (420k $BADGER), to Gitcoin through the end of 2021.
+   </td>
+   <td>
+     BadgerDAO is building the infrastructure to bring Bitcoin to DeFi. They develop tools which make it easy to bridge Bitcoin into other blockchains.
+   </td>
+   <td>
+     <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Gitcoin Grants Quadratic Funding Matching Pool</span><br>
+   </td>
+   <td>
+       <a href="https://badger.com/" target="_blank" style="color: ffffff"><img alt="" height="25" src="/img/Hyperlink.png" width="25" /></a>
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+     <img alt="" width="30" src="/img/ENS.png" />
+   </td>
+   <td>
+     Ethereum Name Service (ENS)
+   </td>
+    <td>
+     $700,000
+   </td>
+    <td>
+     In June 2021, ENS <a href="https://go.gitcoin.co/blog/announcement-ens-joins-funders-league-in-support-of-public-goods" target="_blank" style="color: ffffff">contributed</a> 180 ETH to Gitcoin Grants.
+   </td>
+   <td>
+       ENS is the most widely integrated blockchain naming standard, allowing users to buy secure, private, censorship-resistant .eth domain names.
+   </td>
+   <td>
+     <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Gitcoin Grants Quadratic Funding Matching Pool</span><br>
+   </td>
+   <td>
+       <a href="https://ens.domains/" target="_blank" style="color: ffffff"><img alt="" height="25" src="/img/Hyperlink.png" width="25" /></a>
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+     <img alt="" width="30" src="/img/1inch.png" />
+   </td>
+   <td>
+     1inch
+   </td>
+    <td>
+     $100,000
+   </td>
+    <td>
+     In September 2022, it was announced that 1inch <a href="https://go.gitcoin.co/blog/from-grantee-to-funder-1inch" target="_blank" style="color: ffffff">contributed</a> $100k to Gitcoin Grants round 15 ($50k to Main Round, $25k to Advocacy, and $25k ETH Infra).
+   </td>
+   <td>
+       1inch is a decentralized exchange (DEX) aggregator. 1inch deploys protocols to find the best possible deals at the exact time investors want to buy crypto.
+   </td>
+   <td>
+     <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Gitcoin Grants Quadratic Funding Matching Pool</span><br>
+   </td>
+   <td>
+       <a href="https://1inch.io/" target="_blank" style="color: ffffff"><img alt="" height="25" src="/img/Hyperlink.png" width="25" /></a>
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+     <img alt="" width="30" src="/img/a16z.png" />
+   </td>
+   <td>
+     a16z crypto
+   </td>
+    <td>
+     $300,000
+   </td>
+    <td>
+     In Aug 2022 a16z <a href="https://a16zcrypto.com/supporting-public-goods-with-gitcoin-grants/" target="_blank" style="color: ffffff">contributed</a> $300k to Gitcoin Grants round 15.
+   </td>
+   <td>
+      a16z crypto is a venture capital fund that invests in crypto and web3 startups.
+   </td>
+   <td>
+     <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Gitcoin Grants Quadratic Funding Matching Pool</span><br>
+   </td>
+   <td>
+       <a href="https://a16zcrypto.com/" target="_blank" style="color: ffffff"><img alt="" height="25" src="/img/Hyperlink.png" width="25" /></a>
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+     <img alt="" width="30" src="/img/EF.png" />
+   </td>
+   <td>
+     Ethereum Foundation (EF)
+   </td>
+    <td>
+     +$500,000
+   </td>
+    <td>
+     In Nov 2021 the EF <a href="https://blog.ethereum.org/2021/11/16/advocacy-grants" target="_blank" style="color: ffffff">contributed</a> $500k to Gitcoin Grants round 15. The EF has donated <a href="https://blog.ethereum.org/2020/12/29/esp-grantee-december-20" target="_blank" style="color: ffffff">more funds</a> to Gitcoin, however the exact figures could not be verified to date. 
+   </td>
+   <td>
+    The EF is a non-profit organization dedicated to supporting Ethereum and related technologies.  
+      </td>
+   <td>
+     <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Gitcoin Grants Quadratic Funding Matching Pool</span><br>
+   </td>
+   <td>
+       <a href="https://ethereum.foundation/" target="_blank" style="color: ffffff"><img alt="" height="25" src="/img/Hyperlink.png" width="25" /></a>
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+     <img alt="" width="30" src="/img/NounsDAO.png" />
+   </td>
+   <td>
+     Nouns DAO
+   </td>
+    <td>
+     $775,201
+   </td>
+    <td>
+     In Dec 2021 Nouns DAO <a href="https://medium.com/@noun12/nouns-dao-and-gitcoin-a-public-goods-and-nft-crossover-event-37bf12e12dff" target="_blank" style="color: ffffff">voted</a> to donate 169 ETH to Gitcoin Grants round 12.
+   </td>
+   <td>
+    Nouns are an experimental attempt to improve the formation of on-chain avatar communities. Nouns attempt to bootstrap identity, community, governance, and a treasury that can be used by the community.
+      </td>
+   <td>
+     <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Gitcoin Grants Quadratic Funding Matching Pool</span><br>
+   </td>
+   <td>
+       <a href="https://nouns.wtf/" target="_blank" style="color: ffffff"><img alt="" height="25" src="/img/Hyperlink.png" width="25" /></a>
+   </td>
+  </tr>
+
+
+  <tr>
+   <td>
+     <img alt="" width="30" src="/img/Consensys.png" />
+   </td>
+   <td>
+     Consensys
+   </td>
+    <td>
+     $550,000
+   </td>
+    <td>
+     In 2019 ConsenSys <a href="https://consensys.net/grants/" target="_blank" style="color: ffffff">donated</a> $550,000 worth of grants via Gitcoin.
+   </td>
+   <td>
+    ConsenSys is a market-leading blockchain technology company, building infrastructure and applications for new economic systems that are more open, efficient, and secure. 
+      </td>
+   <td>
+     <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Gitcoin Grants Quadratic Funding Matching Pool</span><br>
+   </td>
+   <td>
+       <a href="https://consensys.net/" target="_blank" style="color: ffffff"><img alt="" height="25" src="/img/Hyperlink.png" width="25" /></a>
+   </td>
+  </tr>
 
     </tbody>
 
@@ -206,24 +414,30 @@
 
 </table>
 
-<br>
-<br> 
 
-</div>
+<br>
+         
+<p style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; color:#eeeeee;">
+<a href="mailto:heyo@publicgoods.love" target="_blank" style="color: ffffff">Email us</a> to add a donation or make changes!
+</p>
 
 <!-- ------------DATATABLE ENDS----------- --!>
 
 <br>
 
-<p style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; color:#eeeeee;"><a href="mailto:heyo@publicgoods.love" target="_blank" style="color: ffffff">
-Email us</a> to add your public goods project, funding platform, donation or commitment
+<div style="border-bottom: 3px solid white; max-width: 1000px;">
+</div>
+        
 <br>
-<br>
+
+<p style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; color:#eeeeee;">
 Contribute to this website on <a href="https://github.com/cheeky-gorilla/publicgoods.love/" target="_blank" style="color: ffffff">GitHub</a>
 <br>
 <br>
 &#169; 2022 <a href="https://www.reddit.com/user/cheeky-gorilla" target="_blank" style="color: ffffff">u/cheeky-gorilla</a>
 </p>
+
+<br>
 
 </center>
 </body>

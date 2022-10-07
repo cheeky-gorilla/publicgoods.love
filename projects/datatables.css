@@ -427,8 +427,8 @@ table.dataTable td {
   padding: 4px;
 }
 .dataTables_wrapper .dataTables_filter {
-  float: left;
-  text-align: right;
+  float: center;
+  text-align: center;
   color: #FFFFFF;
 }
 .dataTables_wrapper .dataTables_filter input {
@@ -437,11 +437,12 @@ table.dataTable td {
   padding: 5px;
   background-color: transparent;
   margin-left: 3px;
+  text-align: center;
   color: #FFFFFF;
 }
 .dataTables_wrapper .dataTables_info {
   clear: both;
-  float: left;
+  float: center;
   padding-top: 0.755em;
   font-size: 12px;
 }
@@ -566,8 +567,8 @@ table.dataTable td {
 @media screen and (max-width: 767px) {
   .dataTables_wrapper .dataTables_info,
 .dataTables_wrapper .dataTables_paginate {
-    float: none;
-    text-align: left;
+    float: center;
+    text-align: center;
     font-size: 12px;
   }
   .dataTables_wrapper .dataTables_paginate {
@@ -577,8 +578,8 @@ table.dataTable td {
 @media screen and (max-width: 640px) {
   .dataTables_wrapper .dataTables_length,
 .dataTables_wrapper .dataTables_filter {
-    float: none;
-    text-align: left;
+    float: center;
+    text-align: center;
     color: #FFFFFF;
   }
   .dataTables_wrapper .dataTables_filter {

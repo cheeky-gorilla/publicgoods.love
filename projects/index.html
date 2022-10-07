@@ -1,20 +1,23 @@
 <html>
+
 <head>
-<title>Public Goods &#128152;</title>
+    <title>Public Goods &#128152;</title>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=0.75">
+    <meta name="viewport" content="width=device-width, initial-scale=0.75">
 
-<link rel="shortcut icon" type="image/png" href="/img/Favicon.png">
+    <link rel="shortcut icon" type="image/png" href="/img/Favicon.png">
 
-<!-- ------------DATATABLE STUFF STARTS----------- --!>
+    <!-- ------------DATATABLE STUFF STARTS----------- --!>
   
   	<link rel="stylesheet" type="text/css" href="https://publicgoods.love/projects/datatables.css">
 
   	<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.6.1.js"></script>
 
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/fixedcolumns/4.1.0/js/dataTables.fixedColumns.min.js"></script>
   
 	<script type="text/javascript" class="init">
 	
@@ -24,6 +27,15 @@
                 dom: '<"top"fi>rt<"bottom"lp><"clear">',
                 paging: false,
        			columnDefs: [{ orderable: false, targets: [0, 3, 5] }],
+                
+                "oLanguage": {"sSearch": "Search: "},
+                language: {searchPlaceholder: ""},
+              
+                scrollY:        '60vh',
+                scrollX:        true,
+                scrollCollapse: true,
+                fixedColumns:   {left: 1},
+              
    				});
 			});
 </script>
@@ -32,7 +44,7 @@
 
 
  <style type="text/css">body {
-        background-color: #393939;
+        background-color: #000000;
         font-family: Arial, Helvetica, sans-serif;
       }
       
@@ -52,6 +64,8 @@
         transition: all 0.2s;
         cursor: pointer;
         margin: 0px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
       }
       
       button:hover {
@@ -64,7 +78,7 @@
             border-collapse: collapse;
             width: 90%;
             width: 800px;
-            text-align: left;
+            text-align: center;
             color:#ffffff;
         }
           
@@ -85,6 +99,7 @@
             text-align: left;
             padding: 8px;
             color:#ffffff;
+            background-color: #000000;
         }
           
  </style>
@@ -95,13 +110,14 @@
 
 <body>
    
-<br>
 <center>
 <p style="font-weight: bold; font-size: 30px; font-family: Arial, Helvetica, sans-serif; color:#ffffff;">Blockchain + Public Goods = <img alt="" src="/img/Love.png" style="width: 75px;" /></p>
 
 <p style="font-family: Arial, Helvetica, sans-serif; color:#ffffff; font-size: 20px;">Discover how blockchain is empowering public goods projects</p>
 
-<div style="border-bottom: 3px solid white; max-width: 800px;">
+<br>
+
+<div style="border-bottom: 3px solid white; max-width: 1000px;">
   <a href="http://www.publicgoods.love/info/"><button type="button">INFO</button></a>
   <a href="http://www.publicgoods.love/projects/"><button type="button" style="background: linear-gradient(to bottom, #393939 0%, #469c63 100%); font-weight: bold;">PROJECTS</button></a>
   <a href="http://www.publicgoods.love/funding/platforms/"><button type="button">FUNDING</button></a>
@@ -113,17 +129,17 @@
 
 <br>
 
-<div style="border-bottom: 3px solid white; overflow-x:auto; max-width: 800px; color: #ffffff; font-family: Arial, Helvetica, sans-serif;">          
+<div style="max-width: 1000px;">          
           
-<table id="projectsdatatable" class="display" style="width: 90%; width: 800px; color: #ffffff">
-  
-    <thead>
+<table id="projectsdatatable" class="display" style="width: 1000px; color: #ffffff">
+
+ <thead>
   <tr>
    <th style="width:25px"></th>
-   <th>Name</th>
-   <th>Public Good</th>
-   <th style="width:280px">Description</th>
-   <th>Blockchain Tooling</th>
+   <th style="width:100px">Name</th>
+   <th style="width:100px">Public Good</th>
+   <th style="width:350px">Description</th>
+   <th style="width:120px">Blockchain Tooling</th>
    <th style="width:25px"></th>
   </tr>
     </thead>
@@ -141,15 +157,17 @@
      Digital Infrastructure
    </td>
    <td>
-     A system combining webs of trust, with reverse Turing tests, and dispute resolution to create a sybil-proof list of humans.
+     A digital identity solution for the web3 era: decentralized, AI-resistant, and economically incentivized. Proof of Humanity gives you access to Universal Basic Income. 
    </td>
    <td>
-     <span style="background-color: #CC99FF; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Smart Contracts</span>
      <span style="background-color: #99CCFF; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Data Storage</span>
+	 <span style="background-color: #CCCC66; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Governance</span>
      <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Quadratic Funding</span>
+	 <span style="background-color: #CC99FF; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Smart Contracts</span>
+     <span style="background-color: #6666FF; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Tokens</span>
    </td>
    <td>
-       <a href="https://www.proofofhumanity.id/" target="_blank" style="color: ffffff"><img alt="" height="25" src="/img/Hyperlink.png" width="25" /></a><br><br><a href="https://twitter.com/proofofhumanity" target="_blank" style="color: ffffff"><img alt="" height="25" src="/img/Twitter.png" width="25" /></a>
+       <a href="https://www.proofofhumanity.id/" target="_blank" style="color: ffffff"><img alt="" height="25"  width="25" src="/img/Hyperlink.png"></a><br><br><a href="https://twitter.com/proofofhumanity" target="_blank" style="color: ffffff"><img alt="" height="25" width="25" src="/img/Twitter.png"></a><br><br><a href="https://gitcoin.co/grants/599/proof-of-humanity" target="_blank" style="color: ffffff"><img alt="" width="25" src="/img/Gitcoin.png"></a>
    </td>
   </tr>
 
@@ -167,33 +185,398 @@
       Grow a decentralized identity record with various credentials about you. Through the network of sources about your personhood, applications like Gitcoin Grants 2.0 gives you rights like matching weight in Quadratic Funding.
    </td>
    <td>
-     <span style="background-color: #CC99FF; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Smart Contracts</span>
      <span style="background-color: #99CCFF; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Data Storage</span>
+     <span style="background-color: #CC99FF; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Smart Contracts</span>
    </td>
    <td>
-       <a href="https://go.gitcoin.co/gitcoin-passport-0" target="_blank" style="color: ffffff"><img alt="" height="25" src="/img/Hyperlink.png" width="25" /></a><br><br><a href="https://twitter.com/gitcoin" target="_blank" style="color: ffffff"><img alt="" height="25" src="/img/Twitter.png" width="25" /></a>
+       <a href="https://go.gitcoin.co/gitcoin-passport-0" target="_blank" style="color: ffffff"><img alt="" height="25" width="25" src="/img/Hyperlink.png"></a><br><br><a href="https://twitter.com/gitcoin" target="_blank" style="color: ffffff"><img alt="" height="25" width="25" src="/img/Twitter.png"></a>
     </td>
   </tr>
+
+  <tr>
+   <td>
+     <img alt="" width="30" src="/img/ENS.png" />
+   </td>
+   <td>
+     Ethereum Name Service (ENS)
+   </td>
+   <td>
+     Digital Infrastructure
+   </td>
+   <td>
+     A web3 username which you, and you alone, own. Can be tied to any Ethereum addresses, to more easily receive any cryptocurrency, token, or NFT. 
+   </td>
+   <td>
+     <span style="background-color: #99CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">DAO</span>
+     <span style="background-color: #99CCFF; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Data Storage</span>
+	 <span style="background-color: #CCCC66; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Governance</span>
+	 <span style="background-color: #CC99FF; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Smart Contracts</span>
+     <span style="background-color: #6666FF; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Tokens</span>
+   </td>
+   <td>
+       <a href="https://ens.domains/" target="_blank" style="color: ffffff"><img alt="" height="25"  width="25" src="/img/Hyperlink.png"></a><br><br><a href="https://twitter.com/ensdomains" target="_blank" style="color: ffffff"><img alt="" height="25" width="25" src="/img/Twitter.png"></a>
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+     <img alt="" width="30" src="/img/Ethstaker.jpg" />
+   </td>
+   <td>
+     EthStaker
+   </td>
+   <td>
+     Knowledge, Education and Advocacy
+   </td>
+   <td>
+     A Reddit-originated community, dedicated to supporting the Ethereum POS communities growth, and to provide welcoming support to all users. Exhaustively kind to every user, they are welcoming first and knowledgeable second. 
+   </td>
+   <td>
+     <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Quadratic Funding</span>
+   </td>
+   <td>
+       <a href="https://www.ethstaker.cc" target="_blank" style="color: ffffff"><img alt="" height="25"  width="25" src="/img/Hyperlink.png"></a><br><br><a href="https://twitter.com/ethstaker" target="_blank" style="color: ffffff"><img alt="" height="25" width="25" src="/img/Twitter.png"></a><br><br><a href="https://gitcoin.co/grants/1561/ethstaker" target="_blank" style="color: ffffff"><img alt="" width="25" src="/img/Gitcoin.png"></a>
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+     <img alt="" width="30" src="/img/Fileverse.png" />
+   </td>
+   <td>
+     Fileverse
+   </td>
+   <td>
+     Digital Infrastructure
+   </td>
+   <td>
+     A web3 replacement for Dropbox, WeTransfer and GoogleDrive, Fileverse is a private, easy-to-use, and on-chain file sharing service, which leverages p2p storage networks (like IPFS) and encryption enabled via crypto wallets’ (eg. MetaMask) private key signatures. 
+   </td>
+   <td>
+     <span style="background-color: #99CCFF; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Data Storage</span>
+     <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Quadratic Funding</span>
+	 <span style="background-color: #CC99FF; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Smart Contracts</span>
+   </td>
+   <td>
+       <a href="https://fileverse.io/" target="_blank" style="color: ffffff"><img alt="" height="25"  width="25" src="/img/Hyperlink.png"></a><br><br><a href="https://twitter.com/fileverse" target="_blank" style="color: ffffff"><img alt="" height="25" width="25" src="/img/Twitter.png"></a><br><br><a href="https://gitcoin.co/grants/4846/fileverseio-file-sharing-between-blockchain-addre" target="_blank" style="color: ffffff"><img alt="" width="25" src="/img/Gitcoin.png"></a>
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+     <img alt="" width="30" src="/img/CoinCenter.png" />
+   </td>
+   <td>
+     Coin Center
+   </td>
+   <td>
+     Knowledge, Education and Advocacy
+   </td>
+   <td>
+     A leading non-profit research and advocacy center focused on the public policy issues facing cryptocurrency and decentralized computing technologies like Bitcoin and Ethereum. 
+   </td>
+   <td>
+     <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Quadratic Funding</span>
+   </td>
+   <td>
+       <a href="https://www.coincenter.org/" target="_blank" style="color: ffffff"><img alt="" height="25"  width="25" src="/img/Hyperlink.png"></a><br><br><a href="https://twitter.com/coincenter" target="_blank" style="color: ffffff"><img alt="" height="25" width="25" src="/img/Twitter.png"></a><br><br><a href="https://gitcoin.co/grants/1668/coin-center-is-educating-policy-makers-about-publ" target="_blank" style="color: ffffff"><img alt="" width="25" src="/img/Gitcoin.png"></a>
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+     <img alt="" width="30" src="/img/EFF.png" />
+   </td>
+   <td>
+     Electronic Frontier Foundation (EFF)
+   </td>
+   <td>
+     Knowledge, Education and Advocacy
+   </td>
+   <td>
+     A leading nonprofit organization defending civil liberties in the digital world. Founded in 1990, EFF champions user privacy, free expression, and innovation through impact litigation, policy analysis, grassroots activism, and technology development.
+   </td>
+   <td>
+     <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Quadratic Funding</span>
+   </td>
+   <td>
+       <a href="https://www.eff.org/" target="_blank" style="color: ffffff"><img alt="" height="25"  width="25" src="/img/Hyperlink.png"></a><br><br><a href="https://twitter.com/EFF" target="_blank" style="color: ffffff"><img alt="" height="25" width="25" src="/img/Twitter.png"></a><br><br><a href="https://gitcoin.co/grants/3974/electronic-frontier-foundation" target="_blank" style="color: ffffff"><img alt="" width="25" src="/img/Gitcoin.png"></a>
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+     <img alt="" width="30" src="/img/Internet Archive.jpg" />
+   </td>
+   <td>
+     Internet Archive
+   </td>
+   <td>
+     Digital Infrastructure
+   </td>
+   <td>
+     A non-profit digital library offering millions of free books, movies, & audio files, plus billions of saved web pages in the Wayback Machine 
+   </td>
+   <td>
+     <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Quadratic Funding</span>
+   </td>
+   <td>
+       <a href="https://archive.org/" target="_blank" style="color: ffffff"><img alt="" height="25"  width="25" src="/img/Hyperlink.png"></a><br><br><a href="https://twitter.com/InternetArchive" target="_blank" style="color: ffffff"><img alt="" height="25" width="25" src="/img/Twitter.png"></a><br><br><a href="https://gitcoin.co/grants/5885/internet-archive" target="_blank" style="color: ffffff"><img alt="" width="25" src="/img/Gitcoin.png"></a>
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+     <img alt="" width="30" src="/img/MRV101.png" />
+   </td>
+   <td>
+     MRV 101
+   </td>
+   <td>
+     Environment
+   </td>
+   <td>
+     A research group aiming to publish a guide to help small scale farmers quickly understand and implement measurement, reporting and verification (MRV) best practices, which in turn will help them get the full benefits of carbon, ecocredits and other incentives for ecosystem services.
+   </td>
+   <td>
+     <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Quadratic Funding</span>
+   </td>
+   <td>
+       <a href="https://mrv.earth/" target="_blank" style="color: ffffff"><img alt="" height="25"  width="25" src="/img/Hyperlink.png"></a><br><br><a href="https://twitter.com/MRV1O1" target="_blank" style="color: ffffff"><img alt="" height="25" width="25" src="/img/Twitter.png"></a><br><br><a href="https://gitcoin.co/grants/7300/mrv-101" target="_blank" style="color: ffffff"><img alt="" width="25" src="/img/Gitcoin.png"></a>
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+     <img alt="" width="30" src="/img/FFTF.jpg" />
+   </td>
+   <td>
+     Fight for the Future
+   </td>
+   <td>
+     Knowledge, Education and Advocacy
+   </td>
+   <td>
+     A group of activists, engineers, technologists and artists leveraging the internet to influence policy and shape a more just, equitable world. They channel outrage into action. 
+   </td>
+   <td>
+     <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Quadratic Funding</span>
+   </td>
+   <td>
+       <a href="https://www.fightforthefuture.org/" target="_blank" style="color: ffffff"><img alt="" height="25"  width="25" src="/img/Hyperlink.png"></a><br><br><a href="https://twitter.com/fightfortheftr" target="_blank" style="color: ffffff"><img alt="" height="25" width="25" src="/img/Twitter.png"></a><br><br><a href="https://gitcoin.co/grants/2594/an-advocate-for-the-user-defending-human-rights-i" target="_blank" style="color: ffffff"><img alt="" width="25" src="/img/Gitcoin.png"></a>
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+     <img alt="" width="30" src="/img/Science Commons.jpg" />
+   </td>
+   <td>
+     The Science Commons Initiative
+   </td>
+   <td>
+     Knowledge, Education and Advocacy
+   </td>
+   <td>
+     A non-profit collaboration aimed at increasing the public's access to and participation in the scientific process. They find, spotlight, and fund technological and other strategic infrastructure to help scientists and researchers solve some of the world's most pressing problems, with an emphasis on engaging the public 
+   </td>
+   <td>
+     <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Quadratic Funding</span>
+   </td>
+   <td>
+       <a href="https://thesciencecommons.org/" target="_blank" style="color: ffffff"><img alt="" height="25"  width="25" src="/img/Hyperlink.png"></a><br><br><a href="https://twitter.com/theSCInitiative" target="_blank" style="color: ffffff"><img alt="" height="25" width="25" src="/img/Twitter.png"></a><br><br><a href="https://gitcoin.co/grants/7335/the-science-commons-initiative" target="_blank" style="color: ffffff"><img alt="" width="25" src="/img/Gitcoin.png"></a>
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+     <img alt="" width="30" src="/img/Lenster.png" />
+   </td>
+   <td>
+     Lenster
+   </td>
+   <td>
+     Digital Infrastructure
+   </td>
+   <td>
+     A decentralized, and permissionless social media app built with Lens Protocol. Lenster is hosted in a decentralised chain and decentralised file storage system IPFS.
+   </td>
+   <td>
+     <span style="background-color: #99CCFF; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Data Storage</span>
+     <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Quadratic Funding</span>
+	 <span style="background-color: #CC99FF; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Smart Contracts</span>
+   </td>
+   <td>
+       <a href="https://lenster.xyz/" target="_blank" style="color: ffffff"><img alt="" height="25"  width="25" src="/img/Hyperlink.png"></a><br><br><a href="https://twitter.com/lensterxyz" target="_blank" style="color: ffffff"><img alt="" height="25" width="25" src="/img/Twitter.png"></a><br><br><a href="https://gitcoin.co/grants/5007/lenster" target="_blank" style="color: ffffff"><img alt="" width="25" src="/img/Gitcoin.png"></a>
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+     <img alt="" width="30" src="/img/Regens Unite.png" />
+   </td>
+   <td>
+     Regens Unite
+   </td>
+   <td>
+     Environment
+   </td>
+   <td>
+     A community aiming to mitigate ecological and social crises, by organizing global events to bring “regens” together in one room, where ideas and knowledge can be shared, and action can be coordinated. 
+   </td>
+   <td>
+     <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Quadratic Funding</span>
+   </td>
+   <td>
+       <a href="https://regensunite.earth/" target="_blank" style="color: ffffff"><img alt="" height="25"  width="25" src="/img/Hyperlink.png"></a><br><br><a href="https://twitter.com/regensunite" target="_blank" style="color: ffffff"><img alt="" height="25" width="25" src="/img/Twitter.png"></a><br><br><a href="https://gitcoin.co/grants/4912/regens-unite-bring-regens-together-in-your-city" target="_blank" style="color: ffffff"><img alt="" width="25" src="/img/Gitcoin.png"></a>
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+     <img alt="" width="30" src="/img/Bloom.png" />
+   </td>
+   <td>
+     Bloom Network
+   </td>
+   <td>
+     Environment
+   </td>
+   <td>
+     A social climate action network that helps people find and participate in local, cost-effective grassroots climate actions. 
+   </td>
+   <td>
+     <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Quadratic Funding</span>
+   </td>
+   <td>
+       <a href="https://bloomnetwork.org/" target="_blank" style="color: ffffff"><img alt="" height="25"  width="25" src="/img/Hyperlink.png"></a><br><br><a href="https://twitter.com/ourbloomnetwork" target="_blank" style="color: ffffff"><img alt="" height="25" width="25" src="/img/Twitter.png"></a><br><br><a href="https://gitcoin.co/grants/1595/bloom-network" target="_blank" style="color: ffffff"><img alt="" width="25" src="/img/Gitcoin.png"></a>
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+     <img alt="" width="30" src="/img/Staking Guide.png" />
+   </td>
+   <td>
+     Ethereum Staking Guides
+   </td>
+   <td>
+     Knowledge, Education and Advocacy
+   </td>
+   <td>
+     A passionate fan of Ethereum and decentralized technology, publishing best-in-class guides on how to become a validator in Ethereum’s Proof of Stake consensus mechanism. 
+   </td>
+   <td>
+     <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Quadratic Funding</span>
+   </td>
+   <td>
+       <a href="https://someresat.medium.com/" target="_blank" style="color: ffffff"><img alt="" height="25"  width="25" src="/img/Hyperlink.png"></a><br><br><a href="https://twitter.com/SomerEsat" target="_blank" style="color: ffffff"><img alt="" height="25" width="25" src="/img/Twitter.png"></a><br><br><a href="https://gitcoin.co/grants/1634/ethereum-staking-guides-ubuntu" target="_blank" style="color: ffffff"><img alt="" width="25" src="/img/Gitcoin.png"></a>
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+     <img alt="" width="30" src="/img/PAP.png" />
+   </td>
+   <td>
+     Plants And Pillars
+   </td>
+   <td>
+     Environment
+   </td>
+   <td>
+     A decentralized organization that aims to encourage people to plant more trees, by gamifying their contributions to the environment.
+   </td>
+   <td>
+     <span style="background-color: #99CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">DAO</span>
+     <span style="background-color: #ffb366; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">NFTs</span>
+     <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Quadratic Funding</span>
+	 <span style="background-color: #CC99FF; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Smart Contracts</span>
+   </td>
+   <td>
+       <a href="https://www.plantsandpillars3.com/" target="_blank" style="color: ffffff"><img alt="" height="25"  width="25" src="/img/Hyperlink.png"></a><br><br><a href="https://twitter.com/plantspillars3" target="_blank" style="color: ffffff"><img alt="" height="25" width="25" src="/img/Twitter.png"></a><br><br><a href="https://gitcoin.co/grants/7552/plants-and-pillars" target="_blank" style="color: ffffff"><img alt="" width="25" src="/img/Gitcoin.png"></a>
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+     <img alt="" width="30" src="/img/Women in Blockchain.jpg" />
+   </td>
+   <td>
+     Women in Blockchain
+   </td>
+   <td>
+     Knowledge, Education and Advocacy
+   </td>
+   <td>
+     A nonprofit with a mission to increase diversity in web3, through education, research, career development, and community initiatives
+   </td>
+   <td>
+     <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Quadratic Funding</span>
+   </td>
+   <td>
+       <a href="https://womeninblockchain.global/" target="_blank" style="color: ffffff"><img alt="" height="25"  width="25" src="/img/Hyperlink.png"></a><br><br><a href="https://twitter.com/blockchaingirls" target="_blank" style="color: ffffff"><img alt="" height="25" width="25" src="/img/Twitter.png"></a><br><br><a href="https://gitcoin.co/grants/6099/women-in-blockchain-wib" target="_blank" style="color: ffffff"><img alt="" width="25" src="/img/Gitcoin.png"></a>
+   </td>
+  </tr>
+
+
+<!-- ------------------------------------TEMPLATE STARTS
+
+  <tr>
+   <td>
+     <img alt="" width="30" src="/img/Proof of Humanity.png">
+   </td>
+   <td>
+     Proof of Humanity
+   </td>
+   <td>
+     Digital Infrastructure
+   </td>
+   <td>
+     A digital identity solution for the web3 era: decentralized, AI-resistant, and economically incentivized. Proof of Humanity gives you access to Universal Basic Income. 
+   </td>
+   <td>
+     <span style="background-color: #99CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">DAO</span>
+     <span style="background-color: #99CCFF; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Data Storage</span>
+	 <span style="background-color: #CCCC66; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Governance</span>
+     <span style="background-color: #ffb366; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">NFT</span>
+     <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Quadratic Funding</span>
+	 <span style="background-color: #CC99FF; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Smart Contracts</span>
+     <span style="background-color: #6666FF; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Tokens</span>
+   </td>
+   <td>
+       <a href="https://www.proofofhumanity.id/" target="_blank" style="color: ffffff"><img alt="" height="25"  width="25" src="/img/Hyperlink.png"></a><br><br><a href="https://twitter.com/proofofhumanity" target="_blank" style="color: ffffff"><img alt="" height="25" width="25" src="/img/Twitter.png"></a><br><br><a href="https://gitcoin.co/grants/599/proof-of-humanity" target="_blank" style="color: ffffff"><img alt="" width="25" src="/img/Gitcoin.png"></a>
+   </td>
+  </tr>
+
+TEMPLATE ENDS------------------------------------ --!>
+
     </tbody>
 </table>
 
 <br>
-<br> 
-
-</div>
+         
+<p style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; color:#eeeeee;">
+<a href="mailto:heyo@publicgoods.love" target="_blank" style="color: ffffff">Email us</a> to add a project or make changes!
+</p>
 
 <!-- ------------DATATABLE ENDS----------- --!>
 
 <br>
-<p style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; color:#eeeeee;"><a href="mailto:heyo@publicgoods.love" target="_blank" style="color: ffffff">
-Email us</a> to add your public goods project, funding platform, donation or commitment
+
+<div style="border-bottom: 3px solid white; max-width: 1000px;">
+</div>
+        
 <br>
-<br>
+
+<p style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; color:#eeeeee;">
 Contribute to this website on <a href="https://github.com/cheeky-gorilla/publicgoods.love/" target="_blank" style="color: ffffff">GitHub</a>
 <br>
 <br>
 &#169; 2022 <a href="https://www.reddit.com/user/cheeky-gorilla" target="_blank" style="color: ffffff">u/cheeky-gorilla</a>
 </p>
+
+<br>
 
 </center>
 </body>

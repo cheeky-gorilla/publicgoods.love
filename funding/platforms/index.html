@@ -1,20 +1,23 @@
 <html>
+
 <head>
-<title>Public Goods &#128152;</title>
+    <title>Public Goods &#128152;</title>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=0.75">
+    <meta name="viewport" content="width=device-width, initial-scale=0.75">
 
-<link rel="shortcut icon" type="image/png" href="/img/Favicon.png">
+    <link rel="shortcut icon" type="image/png" href="/img/Favicon.png">
 
-<!-- ------------DATATABLE STUFF STARTS----------- --!>
+    <!-- ------------DATATABLE STUFF STARTS----------- --!>
   
   	<link rel="stylesheet" type="text/css" href="https://publicgoods.love/projects/datatables.css">
 
   	<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.6.1.js"></script>
 
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/fixedcolumns/4.1.0/js/dataTables.fixedColumns.min.js"></script>
   
 	<script type="text/javascript" class="init">
 	
@@ -27,6 +30,14 @@
                 dom: '<"top"fi>rt<"bottom"lp><"clear">',
                 paging: false,
                 columnDefs: [{ orderable: false, targets: [0, 3, 5] }],
+
+                "oLanguage": {"sSearch": "Search: "},
+                language: {searchPlaceholder: ""},
+             
+                scrollY:        '60vh',
+                scrollX:        true,
+                scrollCollapse: true,
+                fixedColumns:   {left: 1},
                 
                 "footerCallback": function ( row, data, start, end, display ) {
             var api = this.api(), data;
@@ -67,7 +78,7 @@
 
 
  <style type="text/css">body {
-        background-color: #393939;
+        background-color: #000000;
         font-family: Arial, Helvetica, sans-serif;
       }
       
@@ -87,6 +98,8 @@
         transition: all 0.2s;
         cursor: pointer;
         margin: 0px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
       }
       
       button:hover {
@@ -120,6 +133,7 @@
             text-align: left;
             padding: 8px;
             color:#ffffff;
+            background-color: #000000;
         }
           
  </style>
@@ -130,14 +144,16 @@
 
 <body>
    
-<br>
 <center>
 
 <p style="font-weight: bold; font-size: 30px; font-family: Arial, Helvetica, sans-serif; color:#ffffff;">Blockchain + Public Goods = <img alt="" src="/img/Love.png" style="width: 75px;" /></p>
 
 <p style="font-family: Arial, Helvetica, sans-serif; color:#ffffff; font-size: 20px;">Discover how blockchain is empowering public goods projects</p>
 
-<div style="border-bottom: 3px solid white; max-width: 800px;">
+
+<br>
+
+<div style="border-bottom: 3px solid white; max-width: 1000px;">
   <a href="http://www.publicgoods.love/info/"><button type="button">INFO</button></a>
   <a href="http://www.publicgoods.love/projects/"><button type="button">PROJECTS</button></a>
   <a href="http://www.publicgoods.love/funding/platforms/"><button type="button" style="background: linear-gradient(to bottom, #393939 0%, #469c63 100%); font-weight: bold;">FUNDING</button></a>
@@ -145,23 +161,24 @@
 
 <br>
     
-  <a href="http://www.publicgoods.love/funding/platforms"><button type="button" style="border: 1px solid #ffffff; border-top-left-radius: 5px; border-bottom-left-radius: 5px; height:60px; font-size: 15px; background: linear-gradient(to bottom, #393939 0%, #469c63 100%); font-weight: bold">Funding<br>Platforms</button></a><a href="http://www.publicgoods.love/funding/donors"><button type="button" style="border: 1px solid #ffffff; border-top-right-radius: 5px; border-bottom-right-radius: 5px; height:60px; font-size: 15px;">Donors & Commitments</button></a>
+  <a href="http://www.publicgoods.love/funding/platforms"><button type="button" style="border: 1px solid #ffffff; border-top-left-radius: 5px; border-top-right-radius: 0px; border-bottom-left-radius: 5px; border-bottom-right-radius: 0px; height:60px; font-size: 15px; background: linear-gradient(to bottom, #393939 0%, #469c63 100%); font-weight: bold">Crowdfunding<br>Platforms</button></a><a href="http://www.publicgoods.love/funding/donors"><button type="button" style="border: 1px solid #ffffff; border-top-left-radius: 0px; border-top-right-radius: 5px; border-bottom-left-radius: 0px; border-bottom-right-radius: 5px; height:60px; font-size: 15px;">Donors & Commitments</button></a>
 
 <!-- ------------DATATABLE STARTS----------- --!>
 
-<div style="border-bottom: 3px solid white; overflow-x:auto; max-width: 800px; color: #ffffff; font-family: Arial, Helvetica, sans-serif;">        
+<div style="max-width: 1000px;">   
   
 <br>
-    
-<table id="projectsdatatable" class="display" style="width: 90%; width: 800px; color: #ffffff">
+          
+<table id="projectsdatatable" class="display" style="width: 1000px; color: #ffffff">
   
-    <thead>
+ <thead>
   <tr>
    <th style="width:25px"></th>
    <th style="width:25px">Name</th>
    <th style="width:25px">Amount Raised</th>
-   <th style="width:350px">Description</th>
-   <th>Funding Type</th>
+   <th style="width:290px">Description</th>
+   <th style="width:200px">Get Involved</th>
+   <th style="width:120px">Funding Type</th>
    <th style="width:25px"></th>
   </tr>
     </thead>
@@ -180,6 +197,9 @@
    </td>
    <td>
      Gitcoin was the first crowdfunding platform to utilize quadratic funding in support of public goods projects. <a href="https://gov.gitcoin.co/t/a-brief-history-of-gitcoin-from-2017-2022/9431" target="_blank" style="color: ffffff">Launched in 2018</a>, Gitcoin runs crowdfunding rounds every quarter, the most recent of which (<a href="https://go.gitcoin.co/blog/gr15-results" target="_blank" style="color: ffffff">round 15</a>), raised $4.4M for 1,495 different public goods projects. 
+   </td>
+   <td>
+     Gitcoin's 16th quadratic funding round will commence in January 2023. Follow their <a href="https://go.gitcoin.co/blog" target="_blank" style="color: ffffff">blog</a> or <a href="https://twitter.com/gitcoin" target="_blank" style="color: ffffff">Twitter</a> for updates! 
    </td>
    <td>
      <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Quadratic Funding</span>
@@ -203,6 +223,9 @@
       Clr.fund <a href="https://github.com/clrfund/constitution" target="_blank" style="color: ffffff">aims to be</a> "a primary protocol by which the Ethereum protocol and ecosystem allocate funds towards the development of public goods that benefit the Ethereum Ecosystem". Launched in Oct 2020, Clr.fund ran the <a href="https://blog.clr.fund/round-0-review-round-1-launch/" target="_blank" style="color: ffffff">first non-custodial and trust-minimized</a> quadratic funding round</a>.
    </td>
    <td>
+     Clr.fund's <a href="https://blog.clr.fund/post/" target="_blank" style="color: ffffff">next round</a> will run from Oct 11-21, and focus on public goods in Latin America! Public goods projects should <a href="https://ethcolombia.clr.fund/#/join" target="_blank" style="color: ffffff">apply now</a> to be included!
+   </td>
+   <td>
      <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Quadratic Funding</span>
    </td>
    <td>
@@ -222,6 +245,9 @@
    </td>
    <td>
       Pomelo is a crowdfunding platform for public goods projects building on the <a href="https://eos.io/" target="_blank" style="color: ffffff">EOS blockchain</a>. Pomelo was <a href="https://medium.com/@PomeloGrants/500-000-for-public-goods-on-eos-16154e686bdc" target="_blank" style="color: ffffff">launched in Nov 2021</a>, runs quarterly, and is powered by Gitcoin.
+   </td>
+   <td>
+     <a href="https://medium.com/@PomeloGrants/pomelo-season-4-what-you-need-to-know-270196358c17" target="_blank" style="color: ffffff">Season 4</a> of Pomelo grants will run from Nov 23 - Dec 14, with a $385,699 matching pool. Public goods projects building on <a href="https://eos.io/" target="_blank" style="color: ffffff">EOS</a> can apply from Nov 14th. Keep an eye on their <a href="https://medium.com/@PomeloGrants/" target="_blank" style="color: ffffff">blog</a> for application details!
    </td>
    <td>
      <span style="background-color: #66CC99; color: #fff; display: inline-block; padding: 2px 5px; border: 1px solid #393939; border-radius: 5px;">Quadratic Funding</span>
@@ -244,22 +270,28 @@
 </table>
 
 <br>
-<br> 
-
-</div>
+         
+<p style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; color:#eeeeee;">
+<a href="mailto:heyo@publicgoods.love" target="_blank" style="color: ffffff">Email us</a> to add a platform or make changes!
+</p>
 
 <!-- ------------DATATABLE ENDS----------- --!>
 
 <br>
-<p style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; color:#eeeeee;"><a href="mailto:heyo@publicgoods.love" target="_blank" style="color: ffffff">
-Email us</a> to add your public goods project, funding platform, donation or commitment
+
+<div style="border-bottom: 3px solid white; max-width: 1000px;">
+</div>
+        
 <br>
-<br>
+
+<p style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; color:#eeeeee;">
 Contribute to this website on <a href="https://github.com/cheeky-gorilla/publicgoods.love/" target="_blank" style="color: ffffff">GitHub</a>
 <br>
 <br>
 &#169; 2022 <a href="https://www.reddit.com/user/cheeky-gorilla" target="_blank" style="color: ffffff">u/cheeky-gorilla</a>
 </p>
+
+<br>
 
 </center>
 </body>
